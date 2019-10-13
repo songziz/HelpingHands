@@ -9,7 +9,6 @@ $(function(){
 
 function closeModal() {
     document.getElementById("menu").style.display = "none";
-    viewer.destroy();
 }
 
 function tabOver(evt, tabName) {

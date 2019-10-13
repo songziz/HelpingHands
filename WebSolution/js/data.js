@@ -1,4 +1,4 @@
-import firebase from "react-native-firebase";
+//import firebase from "react-native-firebase";
 
 function writeUserData(userId, name, email, imageUrl) {
   firebase
@@ -24,12 +24,12 @@ function postJob(
   description,
   location
 ) {
-  const uuidv1 = require("uuid/v1");
-  firebase
-    .database()
+  //const uuidv1 = require("uuid/v1");
+  const uuid = uuidv1();
+  firebase.database()
     .ref("jobID/" + jobID)
     .set({
-      jobID: {uuidv1()},
+      jobID: {uuid},
       jobName: jobName,
       posterName: posterName,
       posterID: posterID,

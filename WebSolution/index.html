@@ -27,13 +27,24 @@
       crossorigin=""
     ></script>
     <script src="js/jQuery/jquery.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!--<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script> -->
   </head>
 
   <body>
+    
+    <script src="http://wzrd.in/standalone/uuid%2Fv1@latest"></script>
+    <!--
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js"></script>
+    -->
+    
     <div id="map"></div>
     <script src="js/js.js"></script>
     <div id="menu">
-        <span class="close_tr cursor" onclick="closeModal()">&times;</span>
         <div class="navbar">
             <a href="#search" class="tablinks active" onclick="tabOver(event, 'Search')">Search</a>
             <a href="#post" class="tablinks" onclick="tabOver(event, 'Post')">Post</a>
@@ -41,13 +52,42 @@
             <a href="#contact" class="tablinks" onclick="tabOver(event, 'Profile')">Profile</a>
         </div>
         <div id="Search" class="tabcontent" style="display:block">
+            <input type="text" id="taskSearchBar" name="taskSearch" placeholder="Search">
+            <i class="fas fa-search close_tr cursor" onclick="closeModal()"></i>
+            <div class="row"> 
+                <div class="column">
+                    <img src="img/insta.jpg" style="width:100px">
+                    <img src="img/insta.jpg" style="width:100px">
+                </div>
+                <div class="column">
+                    <img src="img/insta.jpg" style="width:100px">
+                    <img src="img/insta.jpg" style="width:100px">
+                </div>  
+                <div class="column">
+                    <img src="img/insta.jpg" style="width:100px">
+                    <img src="img/insta.jpg" style="width:100px">
+                </div>  
+            </div>
             <h3>London</h3>
             <p>London is the capital city of England.</p>
           </div>
           
           <div id="Post" class="tabcontent">
-            <h3>Paris</h3>
-            <p>Paris is the capital of France.</p> 
+            <div class="border">
+                <label for="country">Task:<br></label>
+                <select id="country" name="country"> <br>
+                    <option value="australia">Assemble furniture</option>
+                    <option value="canada">Help move heavy items</option>
+                    <option value="usa">Set up electronics</option>
+                    <option value="usa">Babysitting</option>
+                    <option value="usa">Tutoring</option>
+                    <option value="usa">Mowing lawn</option>
+                </select>
+                <label for="subject"><br>Description of Job:<br></label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                <input type="submit" value="Submit">
+            </div>
+            
           </div>
           
           <div id="Social" class="tabcontent">
@@ -67,6 +107,7 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-storage.js"></script>
 
     <script>
       // Your web app's Firebase configuration
@@ -82,7 +123,7 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
     </script>
+    <script src="js/data.js"></script>
   </body>
 </html>
