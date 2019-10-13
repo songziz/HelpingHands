@@ -1,0 +1,3 @@
+#mapid { height: 180px; }
+body { margin:0; padding:0; width:100%; height:100%; background: #ffffff; }
+#map { position:absolute; top:0; bottom:0; width:100%; z-index: 1; }
