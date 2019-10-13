@@ -11,6 +11,10 @@ function writeUserData(userId, name, email, imageUrl) {
     });
 }
 
+
+function testPostJob() {
+  postJob(1,"cleaning","bob", 123, "1/1","clean stuff","earth");
+}
 function postJob(
   jobID,
   jobName,
