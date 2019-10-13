@@ -1,5 +1,3 @@
-import firebase from "react-native-firebase";
-
 function writeUserData(userId, name, email, imageUrl) {
   firebase
     .database()
@@ -11,10 +9,10 @@ function writeUserData(userId, name, email, imageUrl) {
     });
 }
 
-
 function testPostJob() {
-  postJob(1,"cleaning","bob", 123, "1/1","clean stuff","earth");
+  postJob("1", "cleaning", "bob", 123, "1/1", "clean stuff", "earth");
 }
+
 function postJob(
   jobID,
   jobName,
@@ -24,12 +22,11 @@ function postJob(
   description,
   location
 ) {
-  const uuidv1 = require("uuid/v1");
   firebase
     .database()
     .ref("jobID/" + jobID)
     .set({
-      jobID: {uuidv1()},
+      jobID: "3",
       jobName: jobName,
       posterName: posterName,
       posterID: posterID,
@@ -40,4 +37,3 @@ function postJob(
       location: location
     });
 }
-
